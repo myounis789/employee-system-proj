@@ -5,8 +5,9 @@ from flask_wtf import FlaskForm
 from wtforms import IntegerField, StringField, SelectField, SubmitField
 
 application=Flask(__name__)
-application.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URI")
+application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+application.config['SECRET_KEY'] = os.getenv('secretkey')
 db = SQLAlchemy(application)
 
 class Employees(db.Model):
