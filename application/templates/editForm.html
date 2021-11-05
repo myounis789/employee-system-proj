@@ -11,13 +11,13 @@
     <div class='form'>
         <form action=" {{ url_for('saveRecord') }}" method="POST">
             {{ form.hidden_tag() }}<br>
-            {{ form.emp_name.label }} {{ form.emp_name }}<br>
+            {{ form.emp_name.label }} {{ form.emp_name }} <br>
             <br>
             {{ form.emp_subject.label }} {{ form.emp_subject }}<br>
             <br>
             {{ form.emp_marks.label }} {{ form.emp_marks }}<br>
             <br>
-            {{ form.emp_dept.label }} {{form.emp_dept }}<br>
+            {{ form.emp_dept.label }} {{ form.emp_dept }}<br>
             <br>
             {{ form.emp_salary.label }} {{ form.emp_salary }}<br>
             <br>
