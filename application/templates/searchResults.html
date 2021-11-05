@@ -19,9 +19,9 @@
 
         {% for all in searchRecords %}
         <tr>
-            <td><a href="{{ url_for('displayDetails', empNo=all.empNo) }}"> {{all.Name}}</a></td>
-            <td><a href="{{ url_for('editDetails', empNo=all.empNo) }}"> edit </a>, 
-                <a href="{{ url_for('deleteRecord', empNo=all.empNo) }}"> delete </a></td>
+            <td><a href="{{ url_for('displayDetails', empno=all.empNo) }}"> {{all.Name}}</a></td>
+            <td><a href="{{ url_for('editDetails', empno=all.empNo) }}"> edit </a>, 
+                <a href="{{ url_for('deleteRecord', empno=all.empNo) }}"> delete </a></td>
         </tr>
         {% endfor %}
 
