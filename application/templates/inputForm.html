@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class='form'>
-	<form action="http://localhost:5000/saveRecord" method="POST">
+	<form action="{{ url_for('saveRecord') }}" method="POST">
 		{{ form.hidden_tag() }}
 		{{ form.emp_name.label }} {{ form.emp_name }}
 		<br>

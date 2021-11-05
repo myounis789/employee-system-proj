@@ -9,17 +9,17 @@
 </head>
 <body>
     <div class='form'>
-        <form action="http://localhost:5000/saveRecord" method="POST">
+        <form action=" {{ url_for('saveRecord') }}" method="POST">
             {{ form.hidden_tag() }}
-            {{ form.emp_name.label }} {{ form.emp_name }}
+            {{ form.emp_name.label }} = {{ form.emp_name }}
             <br>
-            {{ form.emp_subject.label }} {{ form.emp_subject }}
+            {{ form.emp_subject.label }} = {{ form.emp_subject }}
             <br>
-            {{ form.emp_marks.label }} {{ form.emp_marks }}
+            {{ form.emp_marks.label }} = {{ form.emp_marks }}
             <br>
-            {{ form.emp_dept.label }} {{form.emp_dept }}
+            {{ form.emp_dept.label }} = {{form.emp_dept }}
             <br>
-            {{ form.emp_salary.label }} {{ form.emp_salary }}
+            {{ form.emp_salary.label }} = {{ form.emp_salary }}
             <br>
             {{ form.submit }}
         </form>

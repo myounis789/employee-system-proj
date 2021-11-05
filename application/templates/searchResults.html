@@ -10,7 +10,7 @@
 <body>
     <center><h2 style= color:green>Search Results</h2></center>
     <br>
-    <a href="http://localhost:5000/"> Home Page</a>
+    <a href="{{ url_for('searchRecord') }}"> Home Page</a>
     <br>
     <center>
     <table border = "1" width = "500">
@@ -19,9 +19,9 @@
 
         {% for all in searchRecords %}
         <tr>
-            <td><a href="http://localhost:5000/employeeDetails/{{all.empNo}}"> {{all.Name}}</a></td>
-            <td><a href="http://localhost:5000/editDetails/"> edit </a>, 
-                <a href="http://localhost:5000/deleteRecord/{{all.empNo}}"> delete </a></td>
+            <td><a href="{{ url_for('displayDetails', empNo=all.empNo) }}"> {{all.Name}}</a></td>
+            <td><a href="{{ url_for('editDetails', empNo=all.empNo) }}"> edit </a>, 
+                <a href="{{ url_for('deleteRecord', empNo=all.empNo) }}"> delete </a></td>
         </tr>
         {% endfor %}
 

@@ -11,7 +11,7 @@
     <center><h2 style= color:green>Employee Information System</h2></center>
 
     <h3 style = color:red>Search tool:</h3><br>
-    <form action="http://localhost:5000/searchRecord" method="POST">
+    <form action="{{ url_for('searchRecord') }}" method="POST">
     Search by:
     <select name="searchby">
         <option value="empNo"> Employee No.</option>
@@ -27,7 +27,7 @@
     </form>
 
     <center>
-    <button><a href="http://localhost:5000/saveRecord"> Add New Record</a></button>
+    <button><a href="{{ url_for('saveRecord') }}"> Add New Record</a></button>
     
     <table border = "1" width = "500">
         <th style = background-color:silver>Employee Name.</th>
@@ -35,14 +35,14 @@
 
         {% for record in records %}
         <tr>
-            <td><a href="http://localhost:5000/employeeDetails/{{record.empNo}}"> {{record.Name}}</a></td>
-            <td><button><a href="http://localhost:5000/editDetails/{{record.empNo}}"> edit </a></button>, 
-                <button><a href="http://localhost:5000/deleteRecord/{{record.empNo}}"> delete </a></button></td>
+            <td><a href="{{ url_for('displayDetails', empno=record.empNo)  }}"> {{record.Name}}</a></td>
+            <td><button><a href="{{ url_for('editDetails', empno=record.empNo) }}"> edit </a></button>, 
+                <button><a href="{{ url_for('deleteRecord', empno=record.empNo) }}"> delete </a></button></td>
         </tr>
         {% endfor %}
     </table>
 
-    <button><a href="http://localhost:5000/viewAll"> View All Records</a></button>
+    <button><a href="{{url_for('viewAll')}}"> View All Records</a></button>
     </center>
 </body>
 </html>
