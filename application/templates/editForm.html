@@ -10,7 +10,7 @@
 <body>
     <div class='form'>
         <form action=" {{ url_for('saveRecord') }}" method="POST">
-            {{ form.hidden_tag() }}
+            {{ form.hidden_tag() }}<br>
             {{ form.emp_name.label }} {{ form.emp_name }}<br>
             <br>
             {{ form.emp_subject.label }} {{ form.emp_subject }}<br>
